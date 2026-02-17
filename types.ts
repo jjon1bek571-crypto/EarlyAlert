@@ -13,7 +13,8 @@ export enum AppTab {
   AUTOMATION = 'automation',
   COMMUNITY = 'community',
   ACADEMY = 'academy',
-  LIVE_EXPERT = 'live_expert'
+  LIVE_EXPERT = 'live_expert',
+  MANUAL = 'manual'
 }
 
 export interface SafetyAlert {

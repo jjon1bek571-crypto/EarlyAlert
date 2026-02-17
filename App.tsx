@@ -20,12 +20,15 @@ import Community from './components/Community';
 import Academy from './components/Academy';
 import BottomNav from './components/BottomNav';
 import LiveExpert from './components/LiveExpert';
+import OnboardingOverlay from './components/OnboardingOverlay';
+import Manual from './components/Manual';
 
 const App: React.FC = () => {
   const [lang, setLang] = useState<Language>('uz');
   const [activeTab, setActiveTab] = useState<AppTab>(AppTab.SPLASH);
   const [lastUpdate, setLastUpdate] = useState(new Date());
   const [criticalAlert, setCriticalAlert] = useState<SafetyAlert | null>(null);
+  const [showOnboarding, setShowOnboarding] = useState(false);
 
   const t = translations[lang];
 
@@ -70,10 +73,24 @@ const App: React.FC = () => {
 
   const onBack = () => setActiveTab(AppTab.DASHBOARD);
 
+  const startApp = () => {
+    const hasVisited = localStorage.getItem('earlyalert_visited');
+    if (!hasVisited) {
+      setShowOnboarding(true);
+      localStorage.setItem('earlyalert_visited', 'true');
+    }
+    setActiveTab(AppTab.DASHBOARD);
+  };
+
+  const goToManualFromOnboarding = () => {
+    setShowOnboarding(false);
+    setActiveTab(AppTab.MANUAL);
+  };
+
   const renderContent = () => {
     switch (activeTab) {
       case AppTab.DASHBOARD:
-        return <Dashboard alerts={alerts} lang={lang} onTriggerDemo={triggerEmergency} setActiveTab={setActiveTab} />;
+        return <Dashboard alerts={alerts} lang={lang} onTriggerDemo={triggerEmergency} setActiveTab={setActiveTab} onShowIntro={() => setShowOnboarding(true)} />;
       case AppTab.FIRE_DETAIL:
         return <FireDetails lang={lang} alerts={alerts} onBack={onBack} />;
       case AppTab.WATER_DETAIL:
@@ -97,14 +114,24 @@ const App: React.FC = () => {
       case AppTab.COMMUNITY:
         return <Community lang={lang} onBack={onBack} />;
       case AppTab.ACADEMY:
-        return <Academy lang={lang} onBack={onBack} />;
+        return <Academy lang={lang} onBack={onBack} setActiveTab={setActiveTab} />;
+      case AppTab.MANUAL:
+        return <Manual lang={lang} onBack={onBack} setActiveTab={setActiveTab} />;
       default:
-        return <Dashboard alerts={alerts} lang={lang} onTriggerDemo={triggerEmergency} setActiveTab={setActiveTab} />;
+        return <Dashboard alerts={alerts} lang={lang} onTriggerDemo={triggerEmergency} setActiveTab={setActiveTab} onShowIntro={() => setShowOnboarding(true)} />;
     }
   };
 
   if (activeTab === AppTab.SPLASH) {
-    return <SplashScreen lang={lang} onStart={() => setActiveTab(AppTab.DASHBOARD)} />;
+    return (
+      <SplashScreen 
+        lang={lang} 
+        onStart={startApp} 
+        onExploreManual={() => {
+          setActiveTab(AppTab.MANUAL);
+        }} 
+      />
+    );
   }
 
   return (
@@ -122,6 +149,14 @@ const App: React.FC = () => {
       </div>
 
       <BottomNav activeTab={activeTab} setActiveTab={setActiveTab} lang={lang} />
+
+      {showOnboarding && (
+        <OnboardingOverlay 
+          lang={lang} 
+          onClose={() => setShowOnboarding(false)} 
+          onReadManual={goToManualFromOnboarding}
+        />
+      )}
 
       {criticalAlert && (
         <EmergencyOverlay 

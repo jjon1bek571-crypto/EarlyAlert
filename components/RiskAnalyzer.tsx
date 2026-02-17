@@ -53,7 +53,7 @@ const RiskAnalyzer: React.FC<RiskAnalyzerProps> = ({ lang, onBack }) => {
 
       <div>
         <h2 className="text-5xl font-[900] tracking-tighter mb-2">{t.riskAnalyzer}</h2>
-        <p className="text-slate-400 font-bold uppercase text-[11px] tracking-widest">AI powered home audit</p>
+        <p className="text-slate-400 font-bold uppercase text-[11px] tracking-widest">Expert Safety Audit Layer</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -66,8 +66,8 @@ const RiskAnalyzer: React.FC<RiskAnalyzerProps> = ({ lang, onBack }) => {
               <img src={image} className="w-full h-full object-cover" alt="Audit Target" />
             ) : (
               <>
-                <i className="fa-solid fa-camera text-5xl text-slate-700 mb-6"></i>
-                <p className="text-slate-500 font-black uppercase text-xs tracking-widest">Upload Home Photo</p>
+                <i className="fa-solid fa-microscope text-5xl text-slate-700 mb-6"></i>
+                <p className="text-slate-500 font-black uppercase text-xs tracking-widest">Upload Area for Deep Audit</p>
               </>
             )}
             <input type="file" ref={fileInputRef} onChange={handleFileUpload} className="hidden" accept="image/*" />
@@ -77,11 +77,11 @@ const RiskAnalyzer: React.FC<RiskAnalyzerProps> = ({ lang, onBack }) => {
             onClick={handleAnalyze}
             disabled={!image || loading}
             className={`w-full py-6 rounded-[24px] font-black uppercase tracking-widest flex items-center justify-center gap-4 transition-all ${
-              !image || loading ? 'bg-slate-800 text-slate-500' : 'bg-emerald-600 text-white shadow-2xl'
+              !image || loading ? 'bg-slate-800 text-slate-500' : 'bg-red-600 text-white shadow-2xl'
             }`}
           >
             {loading ? <i className="fa-solid fa-circle-notch animate-spin"></i> : <i className="fa-solid fa-shield-halved"></i>}
-            Run AI Audit
+            Run Expert Analysis
           </button>
         </div>
 
@@ -91,8 +91,8 @@ const RiskAnalyzer: React.FC<RiskAnalyzerProps> = ({ lang, onBack }) => {
               <div dangerouslySetInnerHTML={{ __html: analysis.replace(/\n/g, '<br/>') }} />
             ) : (
               <div className="h-full flex flex-col items-center justify-center text-center opacity-30">
-                <i className="fa-solid fa-robot text-6xl mb-6"></i>
-                <p className="text-xs uppercase font-black tracking-widest">Waiting for report...</p>
+                <i className="fa-solid fa-layer-group text-6xl mb-6"></i>
+                <p className="text-xs uppercase font-black tracking-widest">Layer Status: Waiting for input...</p>
               </div>
             )}
           </div>

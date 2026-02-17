@@ -1,13 +1,16 @@
 
 import React from 'react';
 import { Language, translations } from '../i18n';
+import { AppTab } from '../types';
 
 interface AcademyProps {
   lang: Language;
   onBack: () => void;
+  // Added to support navigation to manual
+  setActiveTab?: (tab: AppTab) => void;
 }
 
-const Academy: React.FC<AcademyProps> = ({ lang, onBack }) => {
+const Academy: React.FC<AcademyProps> = ({ lang, onBack, setActiveTab }) => {
   const t = translations[lang];
 
   const lessons = [
@@ -33,6 +36,23 @@ const Academy: React.FC<AcademyProps> = ({ lang, onBack }) => {
           <h2 className="text-5xl font-[900] tracking-tighter uppercase text-white">{t.academy}</h2>
           <p className="text-slate-500 font-bold uppercase text-[11px] tracking-[0.2em]">Learn Life Saving Skills</p>
         </div>
+      </div>
+
+      {/* NEW BEGINNER HANDBOOK CARD - MOVED FROM DASHBOARD */}
+      <div 
+        onClick={() => setActiveTab && setActiveTab(AppTab.MANUAL)}
+        className="p-10 rounded-[48px] bg-gradient-to-br from-orange-500/20 to-orange-900/10 border border-orange-500/30 flex flex-col md:flex-row items-center gap-10 cursor-pointer group hover:scale-[1.01] transition-all shadow-2xl shadow-orange-950/20"
+      >
+        <div className="w-24 h-24 bg-orange-600 rounded-[32px] flex items-center justify-center text-white text-5xl shadow-2xl group-hover:rotate-6 transition-transform">
+          <i className="fa-solid fa-book-open"></i>
+        </div>
+        <div className="flex-1 text-center md:text-left">
+          <h3 className="text-3xl font-[900] text-white uppercase italic tracking-tighter mb-2">{t.manualTitle}</h3>
+          <p className="text-slate-400 font-bold uppercase text-[10px] tracking-[0.2em] max-w-lg">{t.manualSubtitle}</p>
+        </div>
+        <button className="px-10 py-5 bg-white text-slate-950 rounded-2xl font-black text-[10px] uppercase tracking-widest group-hover:bg-orange-500 group-hover:text-white transition-all">
+          {t.readManual}
+        </button>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
