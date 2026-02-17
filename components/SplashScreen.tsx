@@ -6,7 +6,6 @@ import OnboardingOverlay from './OnboardingOverlay';
 interface SplashScreenProps {
   lang: Language;
   onStart: () => void;
-  // Yangi: Manualga yo'naltirish splashdan ham bo'lishi uchun
   onExploreManual?: () => void;
 }
 
@@ -44,12 +43,12 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ lang, onStart, onExploreMan
         </div>
       </div>
 
-      <div className="relative z-10 text-center space-y-8 max-w-sm w-full mb-16 animate-fadeIn">
+      <div className="relative z-10 text-center space-y-8 max-w-md w-full mb-16 animate-fadeIn">
         <div className="space-y-4">
-          <h1 className="text-4xl md:text-6xl font-[900] tracking-tighter text-white uppercase italic leading-[0.8] drop-shadow-2xl">
-            EarlyAlert <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 drop-shadow-[0_0_15px_rgba(239,68,68,0.5)]">Safety</span>
+          <h1 className="text-4xl md:text-6xl font-[900] tracking-normal text-white uppercase italic leading-tight drop-shadow-2xl">
+            {t.homeName}
           </h1>
-          <p className="text-slate-400 text-[10px] font-black uppercase tracking-[0.4em] opacity-80 max-w-[250px] mx-auto leading-relaxed text-center">
+          <p className="text-slate-400 text-[12px] font-black uppercase tracking-[0.1em] opacity-80 max-w-[320px] mx-auto leading-relaxed text-center">
             {t.tagline}
           </p>
         </div>

@@ -33,8 +33,8 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, lang, setLan
             <i className="fa-solid fa-shield-heart text-2xl"></i>
           </div>
           <div>
-            <h1 className="font-[900] text-2xl leading-none tracking-tighter text-white">EarlyAlert</h1>
-            <p className="text-[10px] text-slate-500 mt-1 uppercase tracking-[0.4em] font-black">Safety Layer</p>
+            <h1 className="font-[900] text-2xl leading-none tracking-tight text-white">{t.homeName}</h1>
+            <p className="text-[10px] text-slate-500 mt-1 uppercase tracking-[0.2em] font-black">Xavfsizlik Qatlami</p>
           </div>
         </div>
       </div>
@@ -73,7 +73,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, lang, setLan
           ))}
         </div>
         
-        <p className="text-[10px] text-slate-600 font-black text-center uppercase tracking-widest opacity-50">EarlyAlert v2.5 Premium</p>
+        <p className="text-[10px] text-slate-600 font-black text-center uppercase tracking-widest opacity-50">{t.homeName} v2.5 Premium</p>
       </div>
     </aside>
   );

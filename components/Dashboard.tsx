@@ -35,14 +35,14 @@ const Dashboard: React.FC<DashboardProps> = ({ alerts, lang, onTriggerDemo, setA
         </div>
         <div className="relative z-10 space-y-6">
            <div className="flex items-center gap-3">
-              <span className="px-3 py-1 bg-red-600/20 text-red-500 text-[8px] font-black rounded-full border border-red-500/20 tracking-[0.2em] uppercase">V2.5 Live</span>
+              <span className="px-3 py-1 bg-red-600/20 text-red-500 text-[8px] font-black rounded-full border border-red-500/20 tracking-[0.2em] uppercase">V2.5 Faol</span>
               <button onClick={onShowIntro} className="text-[8px] font-black text-slate-500 hover:text-white uppercase tracking-widest flex items-center gap-2 transition-colors">
                 <i className="fa-solid fa-circle-question"></i>
-                {lang === 'uz' ? "TANISHUV SAYOHATI" : (lang === 'ru' ? "ОБУЧЕНИЕ" : "START TOUR")}
+                {lang === 'uz' ? "LOYIHA BILAN TANISHISH" : (lang === 'ru' ? "ОБУЧЕНИЕ" : "START TOUR")}
               </button>
            </div>
-           <h1 className="text-3xl md:text-6xl font-[900] text-white tracking-tighter uppercase italic leading-tight">{t.welcomeTitle}</h1>
-           <p className="max-w-xl text-slate-400 font-bold uppercase text-[9px] md:text-[12px] tracking-widest leading-relaxed opacity-80">
+           <h1 className="text-3xl md:text-6xl font-[900] text-white tracking-tight uppercase italic leading-tight">{t.welcomeTitle}</h1>
+           <p className="max-w-xl text-slate-400 font-bold uppercase text-[10px] md:text-[12px] tracking-normal leading-relaxed opacity-80">
              {t.welcomeSubtitle}
            </p>
            <div className="flex flex-wrap gap-4 pt-4">
@@ -62,8 +62,8 @@ const Dashboard: React.FC<DashboardProps> = ({ alerts, lang, onTriggerDemo, setA
           <div className={`absolute -inset-14 rounded-full blur-[100px] opacity-20 animate-pulse ${hasCritical ? 'bg-red-500' : 'bg-emerald-500'}`}></div>
           <div className={`w-60 h-60 md:w-80 md:h-80 rounded-full border-[1px] flex flex-col items-center justify-center gap-2 bg-[#0f172a]/40 backdrop-blur-3xl shadow-2xl z-10 relative transition-colors duration-700 ${hasCritical ? 'border-red-500/30' : 'border-emerald-500/30'}`}>
             <i className={`fa-solid ${hasCritical ? 'fa-triangle-exclamation text-red-500' : 'fa-shield-check text-emerald-500'} text-5xl md:text-8xl mb-4`}></i>
-            <h2 className="text-2xl md:text-5xl font-[900] tracking-tighter text-white uppercase italic text-center px-4 leading-none">{hasCritical ? t.criticalAlert : t.safe}</h2>
-            <p className="text-[8px] md:text-[11px] uppercase tracking-[0.4em] font-[800] text-slate-500 mt-2">{t.anyDanger}</p>
+            <h2 className="text-2xl md:text-5xl font-[900] tracking-normal text-white uppercase italic text-center px-4 leading-none">{hasCritical ? t.criticalAlert : t.safe}</h2>
+            <p className="text-[8px] md:text-[11px] uppercase tracking-[0.3em] font-[800] text-slate-500 mt-2">{t.anyDanger}</p>
           </div>
         </div>
       </div>
@@ -78,10 +78,10 @@ const Dashboard: React.FC<DashboardProps> = ({ alerts, lang, onTriggerDemo, setA
               </div>
               <span className="bg-emerald-500/10 text-emerald-500 px-4 py-1.5 rounded-full text-[9px] font-black border border-emerald-500/20 uppercase tracking-[0.2em]">{t.underControl}</span>
             </div>
-            <h3 className="text-3xl md:text-5xl font-[900] mb-2 tracking-tighter text-white uppercase italic">{t.fire}</h3>
+            <h3 className="text-3xl md:text-5xl font-[900] mb-2 tracking-normal text-white uppercase italic">{t.fire}</h3>
             <p className="text-slate-500 font-bold mb-8 md:mb-12 text-[10px] md:text-xs uppercase tracking-widest">24°C • {t.smoke} 5%</p>
             <div className="mt-auto flex gap-4">
-               <button onClick={(e) => { e.stopPropagation(); onTriggerDemo('FIRE'); }} className="flex-1 py-4 md:py-5 bg-red-600/90 hover:bg-red-600 text-white rounded-[20px] text-[10px] font-black uppercase tracking-[0.2em] shadow-xl">Test Alert</button>
+               <button onClick={(e) => { e.stopPropagation(); onTriggerDemo('FIRE'); }} className="flex-1 py-4 md:py-5 bg-red-600/90 hover:bg-red-600 text-white rounded-[20px] text-[10px] font-black uppercase tracking-[0.2em] shadow-xl">Signalni sinash</button>
             </div>
           </div>
         </div>
@@ -94,10 +94,10 @@ const Dashboard: React.FC<DashboardProps> = ({ alerts, lang, onTriggerDemo, setA
               </div>
               <span className="bg-emerald-500/10 text-emerald-500 px-4 py-1.5 rounded-full text-[9px] font-black border border-emerald-500/20 uppercase tracking-[0.2em]">{t.active}</span>
             </div>
-            <h3 className="text-3xl md:text-5xl font-[900] mb-2 tracking-tighter text-white uppercase italic">{t.water}</h3>
+            <h3 className="text-3xl md:text-5xl font-[900] mb-2 tracking-normal text-white uppercase italic">{t.water}</h3>
             <p className="text-slate-500 font-bold mb-8 md:mb-12 text-[10px] md:text-xs uppercase tracking-widest">{t.leakDetection}: 0.0 L/m</p>
             <div className="mt-auto flex gap-4">
-               <button onClick={(e) => { e.stopPropagation(); onTriggerDemo('WATER'); }} className="flex-1 py-4 md:py-5 bg-blue-600/90 hover:bg-blue-600 text-white rounded-[20px] text-[10px] font-black uppercase tracking-[0.2em] shadow-xl">Test Alert</button>
+               <button onClick={(e) => { e.stopPropagation(); onTriggerDemo('WATER'); }} className="flex-1 py-4 md:py-5 bg-blue-600/90 hover:bg-blue-600 text-white rounded-[20px] text-[10px] font-black uppercase tracking-[0.2em] shadow-xl">Signalni sinash</button>
             </div>
           </div>
         </div>

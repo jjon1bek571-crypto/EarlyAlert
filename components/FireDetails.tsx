@@ -64,8 +64,8 @@ const FireDetails: React.FC<FireDetailsProps> = ({ lang, alerts, onBack }) => {
         </div>
 
         <div className="p-12 rounded-[48px] bg-red-600/10 border border-red-500/30 flex flex-col justify-center gap-10">
-           <h3 className="text-2xl font-black uppercase tracking-tighter text-red-500">Fast Response</h3>
-           <button onClick={() => window.open('tel:112')} className="w-full py-8 btn-fire text-white rounded-[28px] font-black text-2xl shadow-2xl uppercase tracking-tighter border-2 border-white/10 active:scale-95">
+           <h3 className="text-2xl font-black uppercase tracking-tighter text-red-500">{t.emergencyAction}</h3>
+           <button onClick={() => window.open('tel:101')} className="w-full py-8 btn-fire text-white rounded-[28px] font-black text-2xl shadow-2xl uppercase tracking-tighter border-2 border-white/10 active:scale-95">
              {t.call112}
            </button>
            <div className="flex gap-4">

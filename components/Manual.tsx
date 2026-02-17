@@ -39,7 +39,7 @@ const Manual: React.FC<ManualProps> = ({ lang, onBack, setActiveTab }) => {
       points: [
         'Xavf aniqlanganda telefoningizga SOS xabar keladi.',
         'Tizim avtomatik ravishda klapanlarni yopadi.',
-        '112 xizmati bilan aloqa o\'rnatiladi.'
+        '101 xizmati bilan aloqa o\'rnatiladi.'
       ]
     },
     {
@@ -63,9 +63,13 @@ const Manual: React.FC<ManualProps> = ({ lang, onBack, setActiveTab }) => {
         </button>
       </div>
 
-      <div className="text-center space-y-4 max-w-2xl mx-auto">
-        <h2 className="text-5xl font-[900] tracking-tighter uppercase italic text-white">{t.manualTitle}</h2>
-        <p className="text-slate-500 font-bold uppercase text-[11px] tracking-widest">{t.manualSubtitle}</p>
+      <div className="text-center space-y-6 max-w-2xl mx-auto mb-10">
+        <h2 className="text-4xl md:text-5xl font-[900] tracking-normal uppercase italic text-white leading-tight">
+          {t.manualTitle}
+        </h2>
+        <p className="text-slate-500 font-bold uppercase text-[11px] md:text-[13px] tracking-[0.1em] leading-relaxed">
+          {t.manualSubtitle}
+        </p>
       </div>
 
       <div className="grid grid-cols-1 gap-10 max-w-4xl mx-auto">
@@ -82,8 +86,12 @@ const Manual: React.FC<ManualProps> = ({ lang, onBack, setActiveTab }) => {
               
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-3xl font-[900] text-white uppercase italic tracking-tighter mb-2">{chapter.title}</h3>
-                  <p className="text-slate-400 font-bold uppercase text-[10px] tracking-[0.2em]">{chapter.desc}</p>
+                  <h3 className="text-3xl font-[900] text-white uppercase italic tracking-normal mb-3 leading-tight">
+                    {chapter.title}
+                  </h3>
+                  <p className="text-slate-400 font-bold uppercase text-[11px] tracking-wide leading-relaxed">
+                    {chapter.desc}
+                  </p>
                 </div>
                 
                 <ul className="space-y-4">
@@ -103,7 +111,7 @@ const Manual: React.FC<ManualProps> = ({ lang, onBack, setActiveTab }) => {
       <div className="max-w-md mx-auto pt-10">
         <button 
           onClick={handleReturn}
-          className="w-full py-8 bg-white text-slate-950 rounded-[32px] font-black text-xs uppercase tracking-[0.4em] shadow-2xl hover:scale-105 active:scale-95 transition-all"
+          className="w-full py-8 bg-white text-slate-950 rounded-[32px] font-black text-xs uppercase tracking-[0.3em] shadow-2xl hover:scale-105 active:scale-95 transition-all"
         >
           {t.continueLesson}
         </button>

@@ -29,7 +29,7 @@ const EmergencyOverlay: React.FC<EmergencyOverlayProps> = ({ alert, lang, onClos
         <div className="space-y-4">
           <button 
             className="w-full py-6 bg-white text-red-600 rounded-[24px] text-2xl font-black shadow-2xl hover:scale-105 transition-transform uppercase tracking-tighter"
-            onClick={() => window.open('tel:112')}
+            onClick={() => window.open('tel:101')}
           >
             {t.call112}
           </button>

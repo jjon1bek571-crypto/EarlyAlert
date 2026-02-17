@@ -1,6 +1,6 @@
 {
-  "name": "EarlyAlert Safety Layer",
-  "description": "A high-tech safety layer for homes focusing on fire and water leak detection, featuring AI-powered risk analysis and image simulation.",
+  "name": "Xavfsiz Uy",
+  "description": "Yong'in va suv toshqinidan himoya qiluvchi intellektual xavfsizlik qatlami.",
   "requestFramePermissions": [
     "camera",
     "microphone"
