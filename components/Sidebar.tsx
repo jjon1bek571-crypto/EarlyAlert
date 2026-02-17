@@ -18,6 +18,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, lang, setLan
     { id: AppTab.FIRE_DETAIL, label: t.fire, icon: 'fa-fire' },
     { id: AppTab.WATER_DETAIL, label: t.water, icon: 'fa-droplet' },
     { id: AppTab.ALERTS, label: t.alertHistory, icon: 'fa-list-ul' },
+    { id: AppTab.LIVE_EXPERT, label: t.liveExpert, icon: 'fa-microphone-lines' },
     { id: AppTab.DEVICES, label: t.devices, icon: 'fa-microchip' },
     { id: AppTab.RISK_ANALYZER, label: t.riskAnalyzer, icon: 'fa-brain' },
     { id: AppTab.BUSINESS, label: t.business, icon: 'fa-briefcase' },

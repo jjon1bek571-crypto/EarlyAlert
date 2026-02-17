@@ -2,6 +2,7 @@
   "name": "EarlyAlert Safety Layer",
   "description": "A high-tech safety layer for homes focusing on fire and water leak detection, featuring AI-powered risk analysis and image simulation.",
   "requestFramePermissions": [
-    "camera"
+    "camera",
+    "microphone"
   ]
 }

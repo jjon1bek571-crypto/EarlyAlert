@@ -19,6 +19,7 @@ import Automation from './components/Automation';
 import Community from './components/Community';
 import Academy from './components/Academy';
 import BottomNav from './components/BottomNav';
+import LiveExpert from './components/LiveExpert';
 
 const App: React.FC = () => {
   const [lang, setLang] = useState<Language>('uz');
@@ -85,6 +86,8 @@ const App: React.FC = () => {
         return <VisualEditor lang={lang} onBack={onBack} />;
       case AppTab.ALERTS:
         return <AlertLogs alerts={alerts} lang={lang} onBack={onBack} />;
+      case AppTab.LIVE_EXPERT:
+        return <LiveExpert lang={lang} onBack={onBack} />;
       case AppTab.BUSINESS:
         return <BusinessPortal lang={lang} onBack={onBack} />;
       case AppTab.SETTINGS:

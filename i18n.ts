@@ -55,7 +55,11 @@ export const translations = {
     back: "Orqaga",
     automation: "Avtomatika",
     community: "Hamjamiyat",
-    academy: "Akademiya"
+    academy: "Akademiya",
+    liveExpert: "Jonli Ekspert",
+    startLive: "SUHBATNI BOSHLASH",
+    stopLive: "YAKUNLASH",
+    liveInstruction: "Xavfsizlik bo'yicha mutaxassis bilan real vaqtda ovozli bog'laning."
   },
   ru: {
     tagline: "Будьте на шаг впереди пожарных и водных рисков",
@@ -110,7 +114,11 @@ export const translations = {
     back: "Назад",
     automation: "Автоматика",
     community: "Сообщество",
-    academy: "Академия"
+    academy: "Академия",
+    liveExpert: "Живой Эксперт",
+    startLive: "НАЧАТЬ РАЗГОВОР",
+    stopLive: "ЗАВЕРШИТЬ",
+    liveInstruction: "Голосовая связь с экспертом по безопасности в реальном времени."
   },
   en: {
     tagline: "Stay Ahead of Fire & Water Risks",
@@ -165,6 +173,10 @@ export const translations = {
     back: "Back",
     automation: "Automation",
     community: "Community",
-    academy: "Academy"
+    academy: "Academy",
+    liveExpert: "Live Expert",
+    startLive: "START CONVERSATION",
+    stopLive: "STOP SESSION",
+    liveInstruction: "Connect with a safety expert in real-time via voice."
   }
 };

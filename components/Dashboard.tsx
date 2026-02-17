@@ -16,13 +16,13 @@ const Dashboard: React.FC<DashboardProps> = ({ alerts, lang, onTriggerDemo, setA
 
   const categories = [
     { id: AppTab.ALERTS, icon: 'fa-clock-rotate-left', label: t.alertHistory, color: 'text-amber-500', glow: 'hover:border-amber-500/30' },
+    { id: AppTab.LIVE_EXPERT, icon: 'fa-microphone-lines', label: t.liveExpert, color: 'text-rose-500', glow: 'hover:border-rose-500/30' },
     { id: AppTab.DEVICES, icon: 'fa-microchip', label: t.devices, color: 'text-indigo-500', glow: 'hover:border-indigo-500/30' },
     { id: AppTab.RISK_ANALYZER, icon: 'fa-brain', label: t.riskAnalyzer, color: 'text-emerald-500', glow: 'hover:border-emerald-500/30' },
     { id: AppTab.AUTOMATION, icon: 'fa-bolt', label: t.automation, color: 'text-purple-500', glow: 'hover:border-purple-500/30' },
     { id: AppTab.COMMUNITY, icon: 'fa-users', label: t.community, color: 'text-sky-500', glow: 'hover:border-sky-500/30' },
     { id: AppTab.ACADEMY, icon: 'fa-graduation-cap', label: t.academy, color: 'text-orange-500', glow: 'hover:border-orange-500/30' },
-    { id: AppTab.BUSINESS, icon: 'fa-briefcase', label: t.business, color: 'text-slate-400', glow: 'hover:border-slate-500/30' },
-    { id: AppTab.SETTINGS, icon: 'fa-gears', label: t.settings, color: 'text-slate-500', glow: 'hover:border-slate-500/30' }
+    { id: AppTab.BUSINESS, icon: 'fa-briefcase', label: t.business, color: 'text-slate-400', glow: 'hover:border-slate-500/30' }
   ];
 
   return (
